@@ -31,6 +31,9 @@ async function getGameById(id: number) {
         where: {
             id,
         },
+        include: {
+            bets: true,
+        },
     });
 };
 

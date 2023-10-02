@@ -13,7 +13,28 @@ async function getParticipants() {
     return prisma.participant.findMany();
 }
 
+async function getParticipantById(id: number) {
+    return prisma.participant.findFirst({
+        where: {
+            id,
+        },
+    });
+};
+
+async function updateBalanceByParticipantId(id: number, balance: number) {
+    return prisma.participant.update({
+        where: {
+            id,
+        },
+        data: {
+            balance,
+        },
+    });
+};
+
 export default {
     createParticipant,
     getParticipants,
+    getParticipantById,
+    updateBalanceByParticipantId,
 };
