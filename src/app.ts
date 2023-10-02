@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { participantsRouter } from './routers/index';
+import { gamesRouter, participantsRouter } from './routers/index';
 
 dotenv.config();
 
@@ -11,7 +11,8 @@ app
     .use(cors())
     .use(express.json())
     .get("/health", () => console.log("I'm fine!"))
-    .use("/participants", participantsRouter);
+    .use("/participants", participantsRouter)
+    .use("/games", gamesRouter);
 
 const port = process.env.PORT || 5000;
 

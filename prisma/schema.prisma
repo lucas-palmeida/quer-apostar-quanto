@@ -29,7 +29,7 @@ model Game {
   awayTeamName  String
   homeTeamScore Int      @default(0)
   awayTeamScore Int      @default(0)
-  isFinishe     Boolean  @default(false)
+  isFinished     Boolean  @default(false)
   bets          Bet[]
 
   @@map("games")
