@@ -1,6 +1,7 @@
 # quer-apostar-quanto
 
 Desafio técnico que propõem a criação de API para uma aplicação para apostas esportivas.<br>Tecnologias: Node + Express, TypeScript, Prisma (ORM), Postgres, Jest e Supertest
+
 npm install
 
 npx prisma init
