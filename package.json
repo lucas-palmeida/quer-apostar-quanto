@@ -9,6 +9,8 @@
     "test": "npm run test:load-envs -- jest -- --runInBand",
     "test:coverage": "npm run test:load-envs -- jest -- --coverage --runInBand",
     "migrate:test": "npm run test:load-envs prisma migrate deploy",
+    "dev:load-envs": "dotenv -e .env.development",
+    "dev:seed": "npm run dev:load-envs prisma db seed",
     "dev": "cross-env NODE_ENV=development nodemon --watch 'src/' --exec 'ts-node ./src/server.ts' -e ts",
     "start": "node dist/src/server.js"
   },
