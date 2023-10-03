@@ -11,8 +11,7 @@ async function createBet(homeTeamScore: number, awayTeamScore: number, amountBet
 
     const gameExists = await gamesRepository.getGameById(gameId);
     if(!gameExists) throw gameNotFoundError();
-    console.log(gameExists);
-    if(gameExists.isFinished === true) throw gamesAlreadyFinishedError();
+    if(gameExists.isFinished) throw gamesAlreadyFinishedError();
 
     const updatedBalance = participantExists.balance - amountBet;
 
