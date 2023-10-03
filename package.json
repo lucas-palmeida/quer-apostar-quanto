@@ -10,7 +10,7 @@
     "test:coverage": "npm run test:load-envs -- jest -- --coverage --runInBand",
     "migrate:test": "npm run test:load-envs prisma migrate deploy",
     "dev": "cross-env NODE_ENV=development nodemon --watch 'src/' --exec 'ts-node ./src/server.ts' -e ts",
-    "start": "node dist/server.js"
+    "start": "node dist/src/server.js"
   },
   "keywords": [],
   "author": "",
