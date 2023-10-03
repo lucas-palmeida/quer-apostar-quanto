@@ -3,22 +3,22 @@ export type ApplicationError = {
     message: string;
 };
 
-export type InputParticipantBody = {
+export type ParticipantInput = {
     name: string;
     balance: number;
 };
 
-export type InputCreateGameBody = {
+export type CreateGameInput = {
     homeTeamName: string;
     awayTeamName: string;
 };
 
-export type InputFinishGameBody = {
+export type FinishGameInput = {
     homeTeamScore: number;
     awayTeamScore: number;
 };
 
-export type InputCreateBetBody = {
+export type CreateBetInput = {
     homeTeamScore: number;
 	awayTeamScore: number;
 	amountBet: number;

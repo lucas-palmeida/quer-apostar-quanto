@@ -1,23 +1,15 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-import { gamesRouter, participantsRouter } from './routers/index';
-
-dotenv.config();
+import { betsRouter, gamesRouter, participantsRouter } from './routers/index';
 
 const app = express();
 
 app
     .use(cors())
     .use(express.json())
-    .get("/health", () => console.log("I'm fine!"))
+    .get("/health", (req: Request, res: Response) => res.send("I'm fine!"))
     .use("/participants", participantsRouter)
-    .use("/games", gamesRouter);
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-    console.log("Server is up and running on port " + port);
-});
+    .use("/games", gamesRouter)
+    .use("/bets", betsRouter);
 
 export default app;
