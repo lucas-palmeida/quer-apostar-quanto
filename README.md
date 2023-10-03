@@ -15,4 +15,4 @@ npm run dev:seed
 npm run dev
 
 Link do deploy:
-https://quer-apostar-quanto-api.onrender.com
+https://quer-apostar-quanto-api.onrender.com/health
